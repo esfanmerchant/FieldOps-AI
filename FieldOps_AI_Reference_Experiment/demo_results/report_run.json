@@ -1,0 +1,38 @@
+{
+  "python": "3.13.5",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "scenario_seeds": [
+    1000,
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009,
+    1010,
+    1011,
+    1012,
+    1013,
+    1014,
+    1015,
+    1016,
+    1017,
+    1018,
+    1019
+  ],
+  "optimization_seeds": "50000 + scenario_index*7 + trial_index, trial_index=0,1",
+  "graphs": "8x8 undirected generated grid with nonnegative edge costs",
+  "baseline": "earliest-window-end job first; nearest feasible technician",
+  "ga": {
+    "population": 36,
+    "generations": 50,
+    "mutation_probability": 0.32,
+    "crossover_probability": 0.8
+  },
+  "distance_km": "A* sum of edge weights times 0.8",
+  "route_time": "Travel minutes = 60 * (edge distance units * 0.8 km) / 30 km/h",
+  "scope": "Report-generated reference demonstration; not evidence that the student repository has this implementation"
+}

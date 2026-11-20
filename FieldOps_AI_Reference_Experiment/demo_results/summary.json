@@ -1,0 +1,26 @@
+{
+  "n_scenarios": 20,
+  "n_ga_trials": 40,
+  "baseline": {
+    "score": 68.739,
+    "travel_km": 35.866,
+    "served": 12.95,
+    "on_time_rate": 1.0,
+    "runtime_ms": 0.078,
+    "violations": 0.0,
+    "overtime_min": 0.0
+  },
+  "ga": {
+    "score": 54.689,
+    "travel_km": 33.714,
+    "served": 13.15,
+    "on_time_rate": 1.0,
+    "runtime_ms": 29.681,
+    "violations": 0.0,
+    "overtime_min": 0.0
+  },
+  "objective_improvement_pct": 20.44,
+  "travel_reduction_pct": 6.0,
+  "ga_improved_objective_trials": 37,
+  "ga_equal_objective_trials": 3
+}

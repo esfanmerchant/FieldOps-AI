@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FieldOps AI · Dispatch Intelligence</title>
+<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+<div class="bg-aurora"></div>
+<div class="bg-grid"></div>
+
+<div id="splash">
+  <div class="splash-inner">
+    <img class="logo" src="assets/img/logo.svg" alt="">
+    <h1>FieldOps <span>AI</span></h1>
+    <div class="splash-bar"><i></i></div>
+  </div>
+</div>
+
+<aside class="sidebar">
+  <a class="brand" href="#overview">
+    <img src="assets/img/logo.svg" alt="" width="38" height="38">
+    <div><b>FieldOps <em>AI</em></b><small>Dispatch intelligence</small></div>
+  </a>
+  <nav class="nav">
+    <div class="nav-label">Workspace</div>
+    <a href="#overview" data-page="overview"><i data-i="layout"></i><span>Overview</span><span class="kbd">1</span></a>
+    <a href="#studio" data-page="studio"><i data-i="route"></i><span>Dispatch Studio</span><span class="kbd">2</span></a>
+    <a href="#evolution" data-page="evolution"><i data-i="dna"></i><span>Evolution Lab</span><span class="kbd">3</span></a>
+    <a href="#search" data-page="search"><i data-i="network"></i><span>Search Lab</span><span class="kbd">4</span></a>
+    <a href="#experiments" data-page="experiments"><i data-i="flask"></i><span>Experiments</span><span class="kbd">5</span></a>
+    <a href="#data" data-page="data"><i data-i="database"></i><span>Scenario Data</span><span class="kbd">6</span></a>
+  </nav>
+  <div class="side-foot">
+    <div class="status"><span class="pulse-dot"></span><span id="engine-status">Engine online</span></div>
+    <small>AL-2002 Artificial Intelligence Lab<br>FAST NUCES Karachi · Fall 2026</small>
+  </div>
+</aside>
+
+<main>
+
+<section class="page" id="page-overview">
+  <div class="hero">
+    <div class="card hero-copy glow-border reveal">
+      <div class="eyebrow">AL-2002 · AI Lab Project</div>
+      <h1>Dispatch smarter,<br><span class="grad-text">not just nearer.</span></h1>
+      <p class="lead">FieldOps AI sends the right technician to every service job. A* search measures each road trip, a constraint checker rejects impossible visits, and a genetic algorithm evolves a schedule that beats the nearest-technician rule.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#studio"><i data-i="route"></i>Open Dispatch Studio</a>
+        <a class="btn" href="#evolution"><i data-i="dna"></i>Watch the GA evolve</a>
+      </div>
+      <div class="hero-tags">
+        <span class="chip"><i data-i="network"></i>A* search</span>
+        <span class="chip"><i data-i="dna"></i>Genetic algorithm</span>
+        <span class="chip"><i data-i="shield"></i>Constraint checking</span>
+        <span class="chip"><i data-i="target"></i>Utility-based agent</span>
+        <span class="chip"><i data-i="flask"></i>20 seeded scenarios</span>
+      </div>
+    </div>
+    <div class="card hero-map reveal">
+      <canvas id="hero-canvas"></canvas>
+      <div class="overlay">
+        <span class="live-pill"><span class="pulse-dot"></span>LIVE SIMULATION · <span id="hero-clock">08:00</span></span>
+        <span class="live-pill" id="hero-tag">Scenario 1 · GA plan</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stat-grid" id="ov-stats"></div>
+
+  <div class="section-title"><h2>How a plan is made</h2><span>Click any stage to open it</span></div>
+  <div class="card pipeline reveal" id="pipeline"></div>
+
+  <div class="section-title"><h2>The three AI engines</h2><span>Same scenario, same road costs, same evaluator</span></div>
+  <div class="tri" id="engines"></div>
+
+  <div class="section-title"><h2>Agent &amp; environment</h2><span>PEAS description</span></div>
+  <div class="peas">
+    <div class="card card-pad reveal">
+      <div class="peas-grid">
+        <div class="peas-item"><b><i>P</i>Performance</b><span>Jobs served, travel distance, on-time rate, overtime, hard violations, objective cost and runtime.</span></div>
+        <div class="peas-item"><b><i>E</i>Environment</b><span>Static synthetic service area: weighted road graph, technicians with skills and shifts, job requests.</span></div>
+        <div class="peas-item"><b><i>A</i>Actuators</b><span>Assign or reassign jobs, change visit order, output recommended routes and schedules.</span></div>
+        <div class="peas-item"><b><i>S</i>Sensors</b><span>Job records, technician skills and availability, road-edge travel costs.</span></div>
+      </div>
+    </div>
+    <div class="card card-pad reveal">
+      <div class="env-list">
+        <div class="env-row">Observability <b>Fully observable</b></div>
+        <div class="env-row">Determinism <b>Fixed inputs · stochastic GA</b></div>
+        <div class="env-row">Change over time <b>Static</b></div>
+        <div class="env-row">State &amp; actions <b>Discrete</b></div>
+        <div class="env-row">Agents <b>Single planning agent</b></div>
+        <div class="env-row">Agent type <b>Utility-based optimizer</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title"><h2>Team</h2><span>BDS-5A</span></div>
+  <div class="team" id="team"></div>
+</section>
+
+<section class="page" id="page-studio">
+  <div class="page-head">
+    <div>
+      <div class="eyebrow">Plan · compare · simulate</div>
+      <h1>Dispatch Studio</h1>
+      <p>Generate a service day, then let the nearest-eligible baseline and the genetic algorithm compete on the same A* road costs and the same constraint rules.</p>
+    </div>
+    <div class="head-actions">
+      <span class="chip" id="st-chip">loading</span>
+      <button class="btn btn-primary" id="st-optimize"><span class="spin"></span><i data-i="sparkles"></i>Optimize</button>
+    </div>
+  </div>
+
+  <div class="card toolbar">
+    <div class="field"><label>Scenario</label><select class="input" id="st-preset"></select></div>
+    <div class="field"><label>Seed</label><input class="input mono" id="st-seed" type="number" min="0" style="width:112px"></div>
+    <div class="range"><div class="range-top"><span class="label">Technicians</span><output id="st-nt-o">auto</output></div><input type="range" id="st-nt" min="0" max="8" value="0"></div>
+    <div class="range"><div class="range-top"><span class="label">Jobs</span><output id="st-nj-o">auto</output></div><input type="range" id="st-nj" min="0" max="30" value="0"></div>
+    <div class="field"><label>Windows</label>
+      <select class="input" id="st-win"><option value="normal">Normal</option><option value="tight">Tight</option><option value="relaxed">Relaxed</option></select>
+    </div>
+    <button class="btn" id="st-generate"><i data-i="dice"></i>Generate</button>
+    <div class="grow"></div>
+    <button class="btn btn-ghost" id="st-random"><i data-i="shuffle"></i>Surprise me</button>
+  </div>
+
+  <div class="warning-banner" id="st-warning"><i data-i="alert"></i><div><b id="st-warning-msg"></b><ul id="st-warning-list"></ul></div></div>
+
+  <div class="studio">
+    <div class="studio-main">
+      <div class="card map-card">
+      <div class="map-top">
+        <div class="seg" id="st-view">
+          <button data-v="baseline"><i data-i="target"></i>Nearest-eligible</button>
+          <button data-v="ga" class="on ga"><i data-i="dna"></i>Genetic AI</button>
+        </div>
+        <div class="map-tools">
+          <button class="btn btn-sm" id="st-addjob"><i data-i="plus"></i>Add job</button>
+          <button class="btn btn-sm" id="st-closeroad"><i data-i="ban"></i>Close road</button>
+          <button class="btn btn-sm btn-icon" id="st-reset" title="Undo map edits"><i data-i="undo"></i></button>
+        </div>
+      </div>
+      <div class="map-wrap" id="st-mapwrap">
+        <canvas id="st-canvas"></canvas>
+        <div class="map-legend">
+          <span><i style="background:#fbbf24"></i>Electrical</span>
+          <span><i style="background:#60a5fa"></i>Plumbing</span>
+          <span><i style="background:#67e8f9"></i>HVAC</span>
+          <span><i style="background:linear-gradient(90deg,#334155,#f59e0b)"></i>Slow road</span>
+        </div>
+        <div class="map-hint" id="st-hint"></div>
+        <div class="map-clock" id="st-clock">08:00<small>est.</small></div>
+      </div>
+      <div class="playbar">
+        <button class="btn btn-sm btn-icon" id="st-play" title="Play (Space)"><i data-i="play"></i></button>
+        <span class="time">08:00</span>
+        <input type="range" id="st-time" min="480" max="1020" value="480" step="1">
+        <span class="time">17:00</span>
+        <div class="seg" id="st-speed"><button data-s="1">1×</button><button data-s="3" class="on">3×</button><button data-s="8">8×</button></div>
+      </div>
+    </div>
+
+      <div class="card" style="margin-top:18px">
+        <div class="card-head">
+          <h3><i data-i="clock"></i>Day timeline</h3>
+          <div class="gantt-legend">
+            <span><i style="background:repeating-linear-gradient(135deg,#94a3b8 0 3px,transparent 3px 6px)"></i>Travel</span>
+            <span><i style="background:repeating-linear-gradient(90deg,rgba(148,163,184,.6) 0 2px,transparent 2px 4px)"></i>Waiting</span>
+            <span><i style="background:#5eead4"></i>On site</span>
+          </div>
+        </div>
+        <div class="gantt" id="st-gantt"></div>
+      </div>
+    </div>
+
+    <div class="side-stack">
+      <div class="card">
+        <div class="card-head"><h3><i data-i="gauge"></i>Head-to-head</h3><span class="sub" id="st-runtime"></span></div>
+        <div class="card-body"><div class="big-delta" id="st-delta"></div><div class="kpis" id="st-kpis"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h3><i data-i="layers"></i>Objective breakdown</h3><span class="sub">lower is better</span></div>
+        <div class="card-body"><div class="breakdown" id="st-breakdown"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h3><i data-i="users"></i>Technicians</h3><span class="sub" id="st-roster-sub"></span></div>
+        <div class="card-body"><div class="roster" id="st-roster"></div></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h3><i data-i="alert"></i>Unassigned jobs</h3><span class="sub" id="st-unserved-sub"></span></div>
+        <div class="card-body"><div class="unserved-list" id="st-unserved"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kbd-hint"><span><kbd>O</kbd>Optimize</span><span><kbd>G</kbd>Generate</span><span><kbd>Space</kbd>Play / pause</span><span><kbd>V</kbd>Switch plan</span><span><kbd>Esc</kbd>Exit edit mode</span></div>
+</section>
+
+<section class="page" id="page-evolution">
+  <div class="page-head">
+    <div>
+      <div class="eyebrow">Genetic algorithm</div>
+      <h1>Evolution Lab</h1>
+      <p>Each chromosome is a full dispatch plan. Watch selection, crossover, mutation and elitism push the population toward cheaper schedules, generation by generation.</p>
+    </div>
+    <div class="head-actions">
+      <span class="chip" id="evo-chip">scenario</span>
+      <button class="btn btn-primary" id="evo-run"><span class="spin"></span><i data-i="play"></i>Run evolution</button>
+    </div>
+  </div>
+  <div class="evo">
+    <div class="param-stack">
+      <div class="card">
+        <div class="card-head"><h3><i data-i="sliders"></i>Parameters</h3><button class="btn btn-sm btn-ghost" id="evo-defaults">Report defaults</button></div>
+        <div class="card-body" style="display:grid;gap:18px">
+          <div class="range"><div class="range-top"><span class="label">Population size</span><output id="evo-pop-o">36</output></div><input type="range" id="evo-pop" min="6" max="120" value="36"></div>
+          <div class="range"><div class="range-top"><span class="label">Generations</span><output id="evo-gen-o">50</output></div><input type="range" id="evo-gen" min="5" max="200" value="50"></div>
+          <div class="range"><div class="range-top"><span class="label">Crossover probability</span><output id="evo-cx-o">0.80</output></div><input type="range" id="evo-cx" min="0" max="1" step="0.01" value="0.8"></div>
+          <div class="range"><div class="range-top"><span class="label">Mutation probability</span><output id="evo-mut-o">0.32</output></div><input type="range" id="evo-mut" min="0" max="1" step="0.01" value="0.32"></div>
+          <div class="field"><label>Random seed</label><input class="input mono" type="number" id="evo-seed" value="50000"></div>
+          <div class="fixed-params">
+            <div><small>Elitism</small><b>top 3</b></div>
+            <div><small>Tournament</small><b>k = 3</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h3><i data-i="dna"></i>One generation</h3></div>
+        <div class="card-body ops">
+          <div class="op"><span class="n" style="background:#5eead4">1</span><div><b>Evaluate</b><span>Every chromosome is decoded and scored by the shared ScheduleEvaluator.</span></div></div>
+          <div class="op"><span class="n" style="background:#38bdf8">2</span><div><b>Elitism + selection</b><span>Best 3 survive unchanged. Parents are picked by 3-way tournaments.</span></div></div>
+          <div class="op"><span class="n" style="background:#a78bfa">3</span><div><b>Crossover (p = 0.8)</b><span>Order crossover keeps a slice of parent A's visit order, fills the rest in parent B's order. Technician genes are mixed uniformly.</span></div></div>
+          <div class="op"><span class="n" style="background:#f472b6">4</span><div><b>Mutation (p = 0.32)</b><span>Swap two visits (75%) or reverse a segment (25%), then reassign 1-2 jobs to another qualified technician.</span></div></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="evo-stats">
+        <div class="card mini-stat"><small>Generation</small><b id="evo-s-gen">0<span> / 50</span></b></div>
+        <div class="card mini-stat"><small>Best cost</small><b id="evo-s-best">-</b></div>
+        <div class="card mini-stat"><small>vs baseline</small><b id="evo-s-imp">-</b></div>
+        <div class="card mini-stat"><small>Plans evaluated</small><b id="evo-s-evals">-</b></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h3><i data-i="trending"></i>Convergence</h3><span class="sub">best so far · population mean · worst</span></div>
+        <div class="chart-wrap" id="evo-chart"></div>
+      </div>
+      <div class="evo-split">
+        <div class="card">
+          <div class="card-head"><h3><i data-i="route"></i>Best plan so far</h3><span class="gen-badge" id="evo-gen-badge">gen 0</span></div>
+          <div class="mini-map"><canvas id="evo-canvas"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3><i data-i="dna"></i>Best chromosome</h3><span class="sub" id="evo-chromo-sub"></span></div>
+          <div class="card-body chromo" id="evo-chromo"></div>
+          <div class="card-head" style="padding-top:0"><h3 style="font-size:13px"><i data-i="sparkles"></i>Improvements</h3></div>
+          <div class="card-body"><div class="improve-log" id="evo-log"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="page-search">
+  <div class="page-head">
+    <div>
+      <div class="eyebrow">Informed vs uninformed search</div>
+      <h1>Search Lab</h1>
+      <p>Four classic algorithms race across the same weighted road graph. Click any map to place the start, click again for the goal. Darker cells were expanded earlier.</p>
+    </div>
+    <div class="head-actions">
+      <div class="seg" id="sl-speed"><button data-s="1">Slow</button><button data-s="2" class="on">Normal</button><button data-s="5">Fast</button></div>
+      <button class="btn" id="sl-random"><i data-i="shuffle"></i>Random pair</button>
+      <button class="btn btn-primary" id="sl-run"><span class="spin"></span><i data-i="play"></i>Run search</button>
+    </div>
+  </div>
+  <div class="search-grid" id="sl-grid"></div>
+  <div class="search-side">
+    <div class="card">
+      <div class="card-head"><h3><i data-i="chart"></i>Nodes expanded</h3><span class="sub" id="sl-pair"></span></div>
+      <div class="chart-wrap" id="sl-chart"></div>
+    </div>
+    <div class="card card-pad explain">
+      <div class="formula"><span class="f">f(n)</span> = <span class="g">g(n)</span> + <span class="h">h(n)</span></div>
+      <p><b>g(n)</b> is the real road cost from the start. <b>h(n)</b> is the Manhattan distance to the goal, counted in grid blocks.</p>
+      <p>Every road weighs at least 1, so h(n) never overestimates. The heuristic is <b>admissible</b> and <b>consistent</b>, which is why A* returns the same optimal cost as UCS while expanding fewer nodes.</p>
+      <p><b>Greedy best-first</b> only looks at h(n): fast, but it can pick a slower road. <b>BFS</b> counts edges, not cost, so it ignores road weights.</p>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="page-experiments">
+  <div class="page-head">
+    <div>
+      <div class="eyebrow">Reproducible evaluation</div>
+      <h1>Experiments</h1>
+      <p>20 seeded scenarios (seeds 1000-1019). The baseline runs once per scenario and the GA runs twice with recorded seeds. Both share identical A* costs and the same evaluator.</p>
+    </div>
+    <div class="head-actions">
+      <a class="btn" href="results/results.csv" download><i data-i="download"></i>results.csv</a>
+      <button class="btn btn-primary" id="ex-run"><span class="spin"></span><i data-i="rotate"></i>Re-run benchmark</button>
+    </div>
+  </div>
+  <div class="progress" id="ex-progress"><i></i></div>
+  <div class="match-banner" id="ex-match"></div>
+  <div class="stat-grid" id="ex-stats"></div>
+  <div class="exp-grid">
+    <div class="card"><div class="card-head"><h3><i data-i="chart"></i>Objective cost per scenario</h3><span class="sub">baseline vs GA (mean of 2 seeds)</span></div><div class="chart-wrap" id="ex-bars"></div></div>
+    <div class="card"><div class="card-head"><h3><i data-i="trending"></i>GA convergence</h3><span class="sub">mean best-so-far, 20 scenarios</span></div><div class="chart-wrap" id="ex-conv"></div></div>
+  </div>
+  <div class="card" style="margin-bottom:16px"><div class="card-head"><h3><i data-i="layers"></i>Improvement heatmap</h3><span class="sub">% objective reduction vs baseline, per scenario and GA seed</span></div><div class="chart-wrap" id="ex-heat"></div></div>
+  <div class="exp-grid">
+    <div class="card"><div class="card-head"><h3><i data-i="database"></i>All runs</h3>
+      <div class="seg" id="ex-filter"><button data-f="all" class="on">All</button><button data-f="nearest-eligible">Baseline</button><button data-f="genetic-optimizer">GA</button></div></div>
+      <div class="card-body"><div class="table-wrap" id="ex-table"></div></div></div>
+    <div class="card"><div class="card-head"><h3><i data-i="cpu"></i>Run record</h3></div><div class="card-body"><div class="info-grid" id="ex-info"></div></div></div>
+  </div>
+</section>
+
+<section class="page" id="page-data">
+  <div class="page-head">
+    <div>
+      <div class="eyebrow">Models &amp; validation</div>
+      <h1>Scenario Data</h1>
+      <p>Every Job and Technician object validates itself. Import a JSON scenario to see the loader accept clean records and reject bad rows with a reason.</p>
+    </div>
+    <div class="head-actions">
+      <button class="btn" id="dt-download"><i data-i="download"></i>Export current JSON</button>
+      <a class="btn btn-primary" href="#studio"><i data-i="route"></i>Plan this scenario</a>
+    </div>
+  </div>
+  <div class="data-grid">
+    <div class="param-stack">
+      <div class="card card-pad">
+        <label class="drop" id="dt-drop">
+          <input type="file" id="dt-file" accept=".json,application/json" hidden>
+          <i data-i="upload"></i>
+          <b>Drop a scenario .json here</b>
+          <span>or click to browse</span>
+        </label>
+        <div class="val-result" id="dt-result"></div>
+        <div class="btn-col">
+          <button class="btn" id="dt-sample"><i data-i="file"></i>Load sample scenario</button>
+          <button class="btn" id="dt-broken"><i data-i="alert"></i>Try a broken file</button>
+        </div>
+      </div>
+      <div class="card card-pad">
+        <div class="label" style="margin-bottom:10px">Expected format</div>
+<pre class="mono" style="margin:0;font-size:11.5px;line-height:1.6;color:#c7d2fe;white-space:pre-wrap">{
+  "road_seed": 1000,
+  "technicians": [
+    {"start_node": 55, "skills": ["hvac"],
+     "shift_start": 480, "shift_end": 1020}
+  ],
+  "jobs": [
+    {"node": 2, "skill": "plumbing",
+     "duration": 60, "start": 690,
+     "end": 830, "priority": 1}
+  ]
+}</pre>
+      </div>
+    </div>
+    <div class="param-stack">
+      <div class="card"><div class="card-head"><h3><i data-i="users"></i>Technicians</h3><span class="sub" id="dt-tech-sub"></span></div><div class="card-body"><div class="table-wrap" id="dt-techs"></div></div></div>
+      <div class="card"><div class="card-head"><h3><i data-i="package"></i>Jobs</h3><span class="sub" id="dt-job-sub"></span></div><div class="card-body"><div class="table-wrap" id="dt-jobs"></div></div></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="modal-back" id="job-modal">
+  <div class="card modal">
+    <h3>New service job</h3>
+    <p>Placed at intersection <b class="mono" id="jm-node"></b>. The planners will try to fit it into the day.</p>
+    <div class="modal-grid">
+      <div class="field full"><label>Required skill</label>
+        <div class="skill-pick" id="jm-skill">
+          <button data-s="electrical" class="on"><i data-i="zap"></i>Electrical</button>
+          <button data-s="plumbing"><i data-i="droplet"></i>Plumbing</button>
+          <button data-s="hvac"><i data-i="snow"></i>HVAC</button>
+        </div>
+      </div>
+      <div class="field"><label>Window start</label><input class="input mono" type="time" id="jm-start" value="10:00" step="300"></div>
+      <div class="field"><label>Window end</label><input class="input mono" type="time" id="jm-end" value="13:00" step="300"></div>
+      <div class="field"><label>Duration</label><select class="input" id="jm-dur"><option>25</option><option selected>30</option><option>40</option><option>50</option><option>60</option><option>90</option></select></div>
+      <div class="field"><label>Priority</label><select class="input" id="jm-pri"><option value="1">Normal</option><option value="2">High</option><option value="3">Urgent</option></select></div>
+    </div>
+    <div class="modal-actions"><button class="btn btn-ghost" id="jm-cancel">Cancel</button><button class="btn btn-primary" id="jm-ok"><i data-i="plus"></i>Add job</button></div>
+  </div>
+</div>
+
+<div id="tooltip"></div>
+<div id="toasts"></div>
+<script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
