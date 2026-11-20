@@ -1,0 +1,60 @@
+{
+  "name": "Broken input example",
+  "road_seed": 1000,
+  "technicians": [
+    {
+      "start_node": 12,
+      "skills": [
+        "electrical",
+        "hvac"
+      ]
+    },
+    {
+      "start_node": 99,
+      "skills": [
+        "plumbing"
+      ]
+    },
+    {
+      "start_node": 40,
+      "skills": []
+    }
+  ],
+  "jobs": [
+    {
+      "node": 5,
+      "skill": "plumbing",
+      "duration": 45,
+      "start": 540,
+      "end": 720,
+      "priority": 1
+    },
+    {
+      "node": 18,
+      "skill": "electrical",
+      "duration": -30,
+      "start": 600,
+      "end": 780
+    },
+    {
+      "node": 27,
+      "skill": "hvac",
+      "duration": 40,
+      "start": 900,
+      "end": 840
+    },
+    {
+      "node": "abc",
+      "skill": "plumbing",
+      "duration": 30,
+      "start": 600,
+      "end": 700
+    },
+    {
+      "node": 33,
+      "skill": "electrical",
+      "start": 600,
+      "end": 760
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "name": "Seed 1000",
+  "road_seed": 1000,
+  "grid": 8,
+  "closed_roads": [],
+  "technicians": [
+    {
+      "id": 0,
+      "start_node": 55,
+      "skills": [
+        "electrical",
+        "plumbing",
+        "hvac"
+      ],
+      "shift_start": 480,
+      "shift_end": 1020
+    },
+    {
+      "id": 1,
+      "start_node": 62,
+      "skills": [
+        "electrical",
+        "plumbing",
+        "hvac"
+      ],
+      "shift_start": 480,
+      "shift_end": 1020
+    },
+    {
+      "id": 2,
+      "start_node": 58,
+      "skills": [
+        "plumbing",
+        "hvac"
+      ],
+      "shift_start": 480,
+      "shift_end": 1020
+    },
+    {
+      "id": 3,
+      "start_node": 18,
+      "skills": [
+        "electrical",
+        "plumbing"
+      ],
+      "shift_start": 480,
+      "shift_end": 1020
+    }
+  ],
+  "jobs": [
+    {
+      "id": 0,
+      "node": 2,
+      "skill": "plumbing",
+      "duration": 60,
+      "start": 690,
+      "end": 830,
+      "priority": 2
+    },
+    {
+      "id": 1,
+      "node": 22,
+      "skill": "hvac",
+      "duration": 25,
+      "start": 580,
+      "end": 790,
+      "priority": 1
+    },
+    {
+      "id": 2,
+      "node": 0,
+      "skill": "electrical",
+      "duration": 40,
+      "start": 610,
+      "end": 720,
+      "priority": 1
+    },
+    {
+      "id": 3,
+      "node": 15,
+      "skill": "hvac",
+      "duration": 30,
+      "start": 610,
+      "end": 780,
+      "priority": 1
+    },
+    {
+      "id": 4,
+      "node": 29,
+      "skill": "plumbing",
+      "duration": 40,
+      "start": 650,
+      "end": 790,
+      "priority": 2
+    },
+    {
+      "id": 5,
+      "node": 58,
+      "skill": "electrical",
+      "duration": 40,
+      "start": 610,
+      "end": 800,
+      "priority": 2
+    },
+    {
+      "id": 6,
+      "node": 42,
+      "skill": "hvac",
+      "duration": 25,
+      "start": 610,
+      "end": 800,
+      "priority": 1
+    },
+    {
+      "id": 7,
+      "node": 29,
+      "skill": "electrical",
+      "duration": 40,
+      "start": 730,
+      "end": 840,
+      "priority": 1
+    },
+    {
+      "id": 8,
+      "node": 17,
+      "skill": "plumbing",
+      "duration": 60,
+      "start": 550,
+      "end": 690,
+      "priority": 1
+    },
+    {
+      "id": 9,
+      "node": 61,
+      "skill": "plumbing",
+      "duration": 30,
+      "start": 650,
+      "end": 820,
+      "priority": 2
+    }
+  ],
+  "baseline_routes": [
+    [
+      3,
+      1,
+      4,
+      7
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      9
+    ],
+    [
+      8,
+      2,
+      0
+    ]
+  ],
+  "ga_routes": [
+    [
+      3,
+      1,
+      4,
+      7
+    ],
+    [
+      9,
+      5,
+      6
+    ],
+    [],
+    [
+      8,
+      2,
+      0
+    ]
+  ]
+}
